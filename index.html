@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+	<head>
+		<title>TAVECOL LTDA</title> <!--Titulo-->
+		<link rel="stylesheet" href="estilo1.css" type="text/css"/> <!--Conecxion css-->
+		<link href="styles.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body background="fondo.png">
+		<section>
+		<div id ="contenedor">
+			<center>
+				<?php 
+				session_start(); 
+				include('acceso_db.php'); 
+				if(empty($_SESSION['usuario_nombre'])) { // comprobamos que las variables de sesión estén vacías         
+				?> 
+			
+			<form action="comprobar.php" method="post"> 
+				<table>
+					<tr><td><label>Usuario:</label></td><td><input type="text" name="login" /></td></tr>
+					<tr><td><label>Contrase&ntilde;a:</label></td><td><input type="password" name="password" /></td></tr>
+				</table>
+				<center><input type="submit" name="enviar" value="Iniciar sesi&oacute;n" /></center>
+			</form>                     
+			</center> 
+		</div>
+		</section>
+	</body>
+
+</html>
